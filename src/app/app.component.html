@@ -1,14 +1,17 @@
 
-
-<div class="grid justify-content-center mx-8 py-14 lg:py-28 max-w-2xl md:mx-auto">
-	<app-header></app-header>
-	<div class="w-full grid">
-		<input (input)="onInput($event)" type="text" [(ngModel)]="userInput" placeholder="Search for any word..." class="text-base font-bold tracking-normal py-3 px-5 w-full rounded-2xl bg-[#f9f9f9] mx-auto">
+<div class="bg-[var(--main-background)] min-h-screen text-[var(--main-text)] transition-colors duration-500" [ngClass]="{'dark-theme': darkMode, 'light-theme': !darkMode, 'font-sans': chosenFont === 'Sans Serif', 'font-serif': chosenFont === 'Serif', 'font-mono': chosenFont === 'Mono'}">
+	<div class="grid justify-content-center mx-8 py-14 lg:py-28 max-w-2xl md:mx-auto" >
+		<app-header [(chosenFont)]="chosenFont" [(darkMode)]="darkMode"></app-header>
+		<div class="w-full grid">
+			<input required (input)="onInput($event)" type="text" [(ngModel)]="userInput" placeholder="Search for any word..." 
+					class="text-base font-bold tracking-normal py-3 px-5 w-full rounded-2xl bg-[var(--input-bg)] mx-auto outline-[#a445ed] invalid:outline-red-600 focus:outline-2 focus:outline "
+			>
+		</div>
+		<div *ngIf="responseList" class="">
+			<app-info *ngIf="responseList" [data]="responseList" ></app-info>
+		</div>
+		<p *ngIf="error">Sorry Pal, we couldn't find the definition</p>
 	</div>
-	<div *ngIf="!error" class="">
-		<app-info *ngIf="responseList" [data]="responseList" ></app-info>
-	</div>
-	<p *ngIf="error">Sorry Pal, we couldn't find the definition</p>
 </div>
 
 

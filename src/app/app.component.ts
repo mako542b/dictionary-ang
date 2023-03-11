@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// import { InfoComponent } from './info/info.component';
 import { Wordinterface } from './WordInterface'
 
 @Component({
@@ -12,10 +11,12 @@ export class AppComponent {
   constructor(private http: HttpClient) {}
 
   userInput : string = ''
-  
   responseList : Wordinterface | null = null
-
   error = false
+  chosenFont: string = 'Sans Serif'
+  // darkTheme: boolean =  window.matchMedia(“(prefers-color-scheme: dark)”);
+  darkMode = false
+
 
 
   onInput(event: Event) {
@@ -30,9 +31,8 @@ export class AppComponent {
   }
 
   handleError({ error }: any) {
-    if(error.title === 'No Definitions Found')
-    this.error = true
-    this.responseList = null
+      this.error = true
+      this.responseList = null    
   }
 
 }

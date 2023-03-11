@@ -1,3 +1,18 @@
-<div>
+<div class="flex pb-8 w-full items-center">
     <img src="../../assets/book.svg" alt="">
+    <div class="relative after:inset-y-0 after:right-0 ml-auto after:absolute after:w-[1px] after:bg-gray-300 pr-6">
+        <select class="py-2 pr-1 bg-[var(--main-background)] transition-colors duration-500 shadow-lg cursor-pointer shadow-inherit text-right px-2 font-bold text-lg" (change)="changeFont($event)">
+            <option class="font-sans cursor-pointer" value="Sans Serif">Sans serif</option>
+            <option class="font-serif" value="Serif">Serif</option>
+            <option class="font-mono" value="Mono">Mono</option>
+        </select>
+    </div>
+    <button 
+    (click)="toggleMode()" 
+        class="w-12 h-6 rounded-full bg-gray-500 ml-6 
+            relative after:absolute after:inset-y-[3px] 
+            after:aspect-square after:rounded-full after:bg-gray-50 
+            after:left-[4px] after:transition-transform after:duration-500
+            transition-colors duration-500"  
+        [ngClass]="{'after:translate-x-[120%]': darkMode, 'bg-purple-700': darkMode}"></button>
 </div>

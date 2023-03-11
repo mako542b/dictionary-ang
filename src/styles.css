@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dark-theme {
+    --main-background: #050505;
+    --main-text: white;
+    --input-bg: #1f1f1f;
+    --test: #a445ed;
+}
+
+
+.light-theme {
+    --main-background: white;
+    --main-text: #2d2d2d;
+    --input-bg: #f1f1f1
+}
+
+.color-scheme {
+    background-color: var(--main-background);
+    color: var(--main-text);
+}
