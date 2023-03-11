@@ -12,7 +12,7 @@
         class="w-12 h-6 rounded-full bg-gray-500 ml-6 
             relative after:absolute after:inset-y-[3px] 
             after:aspect-square after:rounded-full after:bg-gray-50 
-            after:left-[4px] after:transition-transform after:duration-500
+            after:left-[4px] after:transition-[left] after:duration-500
             transition-colors duration-500"  
-        [ngClass]="{'after:translate-x-[120%]': darkMode, 'bg-purple-700': darkMode}"></button>
+        [ngClass]="{'after:left-[calc(100%-22px)]': darkMode,  'bg-purple-700': darkMode}"></button>
 </div>
