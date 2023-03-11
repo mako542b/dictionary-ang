@@ -7,10 +7,11 @@
 					class="text-base font-bold tracking-normal py-3 px-5 w-full rounded-2xl bg-[var(--input-bg)] mx-auto outline-[#a445ed] invalid:outline-red-600 focus:outline-2 focus:outline "
 			>
 		</div>
-		<div *ngIf="responseList" class="">
+		<div *ngIf="responseList && !isLoading" class="">
 			<app-info *ngIf="responseList" [data]="responseList" ></app-info>
 		</div>
 		<p *ngIf="error">Sorry Pal, we couldn't find the definition</p>
+		<p *ngIf="isLoading" class="text-center p-10">Loading...</p>
 	</div>
 </div>
 
