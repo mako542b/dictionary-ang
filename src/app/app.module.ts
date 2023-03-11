@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InfoComponent } from './info/info.component';
 import { MeaningComponent } from './meaning/meaning.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InfoComponent,
-    MeaningComponent
+    MeaningComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

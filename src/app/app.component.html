@@ -1,10 +1,11 @@
 
 
-<div class="grid justify-items-center py-28">
+<div class="grid justify-content-center mx-8 py-14 lg:py-28 max-w-2xl md:mx-auto">
+	<app-header></app-header>
 	<div class="w-full grid">
-		<input (input)="onInput($event)" type="text" [(ngModel)]="userInput" placeholder="Search for any word..." class="text-lg font-semibold p-4 w-1/2 rounded-xl bg-gray-100 mx-auto">
+		<input (input)="onInput($event)" type="text" [(ngModel)]="userInput" placeholder="Search for any word..." class="text-base font-bold tracking-normal py-3 px-5 w-full rounded-2xl bg-[#f9f9f9] mx-auto">
 	</div>
-	<div *ngIf="!error" class="w-1/2">
+	<div *ngIf="!error" class="">
 		<app-info *ngIf="responseList" [data]="responseList" ></app-info>
 	</div>
 	<p *ngIf="error">Sorry Pal, we couldn't find the definition</p>
